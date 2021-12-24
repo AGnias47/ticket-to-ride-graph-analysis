@@ -1,0 +1,162 @@
+[
+  {
+    "cities": [ "Calgary", "Nashville" ],
+    "points": 14
+  },
+  {
+    "cities": [ "Chicago", "Atlanta" ],
+    "points": 5
+  },
+  {
+    "cities": [ "Chicago", "Boston" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Chicago", "New York" ],
+    "points": 5
+  },
+  {
+    "cities": [ "Denver", "Saint Louis" ],
+    "points": 6
+  },
+  {
+    "cities": [ "Duluth", "Dallas" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Houston", "Washington" ],
+    "points": 10
+  },
+  {
+    "cities": [ "Kansas City", "Boston" ],
+    "points": 11
+  },
+  {
+    "cities": [ "Las Vegas", "Miami" ],
+    "points": 21
+  },
+  {
+    "cities": [ "Las Vegas", "New York" ],
+    "points": 19
+  },
+  {
+    "cities": [ "Los Angeles", "Atlanta" ],
+    "points": 15
+  },
+  {
+    "cities": [ "Los Angeles", "Calgary" ],
+    "points": 12
+  },
+  {
+    "cities": [ "Los Angeles", "Oklahoma City" ],
+    "points": 9
+  },
+  {
+    "cities": [ "Los Angeles", "Miami" ],
+    "points": 19,
+    "revised": true
+  },
+  {
+    "cities": [ "Los Angeles", "New York" ],
+    "points": 20,
+    "revised": true
+  },
+  {
+    "cities": [ "Montreal", "Dallas" ],
+    "points": 13
+  },
+  {
+    "cities": [ "Montreal", "Raleigh" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Nashville", "New York" ],
+    "points": 6
+  },
+  {
+    "cities": [ "New York", "Miami" ],
+    "points": 10
+  },
+  {
+    "cities": [ "Omaha", "New Orleans" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Phoenix", "Boston" ],
+    "points": 19
+  },
+  {
+    "cities": [ "Pittsburgh", "New Orleans" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Portland", "Houston" ],
+    "points": 16
+  },
+  {
+    "cities": [ "Portland", "Pittsburgh" ],
+    "points": 19
+  },
+  {
+    "cities": [ "Saint Louis", "Miami" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Salt Lake City", "Chicago" ],
+    "points": 11
+  },
+  {
+    "cities": [ "Salt Lake City", "Kansas City" ],
+    "points": 7
+  },
+  {
+    "cities": [ "San Francisco", "Sault Ste. Marie" ],
+    "points": 17
+  },
+  {
+    "cities": [ "San Francisco", "Washington" ],
+    "points": 21
+  },
+  {
+    "cities": [ "Sault Ste. Marie", "Miami" ],
+    "points": 12
+  },
+  {
+    "cities": [ "Sault Ste. Marie", "Oklahoma City" ],
+    "points": 8,
+    "revised": true
+  },
+  {
+    "cities": [ "Seattle", "Las Vegas" ],
+    "points": 10
+  },
+  {
+    "cities": [ "Seattle", "New York" ],
+    "points": 20,
+    "revised": true
+  },
+  {
+    "cities": [ "Seattle", "Oklahoma City" ],
+    "points": 14
+  },
+  {
+    "cities": [ "Toronto", "Charleston" ],
+    "points": 6
+  },
+  {
+    "cities": [ "Vancouver", "Denver" ],
+    "points": 11
+  },
+  {
+    "cities": [ "Vancouver", "Duluth" ],
+    "points": 13
+  },
+  {
+    "cities": [ "Washington", "Atlanta" ],
+    "points": 4
+  },
+  {
+    "cities": [ "Winnipeg", "Santa Fe" ],
+    "points": 10
+  }
+]

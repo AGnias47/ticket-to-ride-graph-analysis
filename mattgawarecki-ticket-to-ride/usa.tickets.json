@@ -1,0 +1,122 @@
+[
+  {
+    "cities": [ "Boston", "Miami" ],
+    "points": 12
+  },
+  {
+    "cities": [ "Calgary", "Phoenix" ],
+    "points": 13
+  },
+  {
+    "cities": [ "Calgary", "Salt Lake City" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Chicago", "New Orleans" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Chicago", "Santa Fe" ],
+    "points": 9
+  },
+  {
+    "cities": [ "Dallas", "New York" ],
+    "points": 11
+  },
+  {
+    "cities": [ "Denver", "El Paso" ],
+    "points": 4
+  },
+  {
+    "cities": [ "Denver", "Pittsburgh" ],
+    "points": 11
+  },
+  {
+    "cities": [ "Duluth", "El Paso" ],
+    "points": 10
+  },
+  {
+    "cities": [ "Duluth", "Houston" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Helena", "Los Angeles" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Kansas City", "Houston" ],
+    "points": 5
+  },
+  {
+    "cities": [ "Los Angeles", "Chicago" ],
+    "points": 16
+  },
+  {
+    "cities": [ "Los Angeles", "Miami" ],
+    "points": 20
+  },
+  {
+    "cities": [ "Los Angeles", "New York" ],
+    "points": 21
+  },
+  {
+    "cities": [ "Montreal", "Atlanta" ],
+    "points": 9
+  },
+  {
+    "cities": [ "Montreal", "New Orleans" ],
+    "points": 13
+  },
+  {
+    "cities": [ "New York", "Atlanta" ],
+    "points": 6
+  },
+  {
+    "cities": [ "Portland", "Nashville" ],
+    "points": 17
+  },
+  {
+    "cities": [ "Portland", "Phoenix" ],
+    "points": 11
+  },
+  {
+    "cities": [ "San Francisco", "Atlanta" ],
+    "points": 17
+  },
+  {
+    "cities": [ "Sault Ste. Marie", "Nashville" ],
+    "points": 8
+  },
+  {
+    "cities": [ "Sault Ste. Marie", "Oklahoma City" ],
+    "points": 9
+  },
+  {
+    "cities": [ "Seattle", "Los Angeles" ],
+    "points": 9
+  },
+  {
+    "cities": [ "Seattle", "New York" ],
+    "points": 22
+  },
+  {
+    "cities": [ "Toronto", "Miami" ],
+    "points": 10
+  },
+  {
+    "cities": [ "Vancouver", "Montreal" ],
+    "points": 20
+  },
+  {
+    "cities": [ "Vancouver", "Santa Fe" ],
+    "points": 13
+  },
+  {
+    "cities": [ "Winnipeg", "Houston" ],
+    "points": 12
+  },
+  {
+    "cities": [ "Winnipeg", "Little Rock" ],
+    "points": 11
+  }
+]

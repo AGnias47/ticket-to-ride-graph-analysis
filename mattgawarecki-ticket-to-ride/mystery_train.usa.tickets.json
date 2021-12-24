@@ -1,0 +1,18 @@
+[
+  {
+    "cities": [ "Boston", "Washington" ],
+    "points": 4
+  },
+  {
+    "cities": [ "Montreal", "Chicago" ],
+    "points": 7
+  },
+  {
+    "cities": [ "Vancouver", "Portland" ],
+    "points": 2
+  },
+  {
+    "cities": [ "Winnipeg", "Omaha" ],
+    "points": 6
+  }
+]

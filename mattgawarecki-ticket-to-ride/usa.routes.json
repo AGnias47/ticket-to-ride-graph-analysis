@@ -1,0 +1,1889 @@
+{
+  "Atlanta": {
+    "Charleston": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Miami": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Nashville": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New Orleans": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Raleigh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Boston": {
+    "Montreal": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New York": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Calgary": {
+    "Helena": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Seattle": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Vancouver": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Winnipeg": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Charleston": {
+    "Atlanta": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Miami": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Raleigh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Chicago": {
+    "Duluth": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Omaha": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Saint Louis": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Toronto": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Dallas": {
+    "El Paso": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Houston": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Little Rock": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Denver": {
+    "Helena": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Kansas City": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Omaha": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Phoenix": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Salt Lake City": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Santa Fe": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Duluth": {
+    "Chicago": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Helena": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Omaha": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Sault Ste. Marie": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Toronto": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Winnipeg": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "El Paso": {
+    "Dallas": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Houston": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Los Angeles": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Phoenix": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Santa Fe": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Helena": {
+    "Calgary": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Denver": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Duluth": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Omaha": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Salt Lake City": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Seattle": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Winnipeg": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Houston": {
+    "Dallas": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "El Paso": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New Orleans": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Kansas City": {
+    "Denver": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Omaha": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Saint Louis": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Las Vegas": {
+    "Los Angeles": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Salt Lake City": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Little Rock": {
+    "Dallas": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Nashville": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New Orleans": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Saint Louis": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Los Angeles": {
+    "El Paso": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Las Vegas": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Phoenix": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "San Francisco": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Miami": {
+    "Atlanta": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Charleston": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New Orleans": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Montreal": {
+    "Boston": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New York": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Sault Ste. Marie": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Toronto": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Nashville": {
+    "Atlanta": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Little Rock": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Raleigh": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "St. Louis": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "New Orleans": {
+    "Atlanta": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Houston": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Little Rock": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Miami": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "New York": {
+    "Boston": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Montreal": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Washington": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Oklahoma City": {
+    "Dallas": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Denver": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "El Paso": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Kansas City": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Little Rock": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Santa Fe": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Omaha": {
+    "Chicago": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Denver": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Duluth": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Helena": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Kansas City": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Phoenix": {
+    "Denver": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "El Paso": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Los Angeles": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Santa Fe": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Pittsburgh": {
+    "Chicago": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Nashville": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "New York": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Raleigh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Saint Louis": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Toronto": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Washington": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Portland": {
+    "Salt Lake City": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "San Francisco": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Seattle": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Raleigh": {
+    "Atlanta": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Charleston": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Nashville": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Washington": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Saint Louis": {
+    "Chicago": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Kansas City": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Little Rock": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Nashville": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Salt Lake City": {
+    "Denver": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Red",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Helena": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Las Vegas": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Portland": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "San Francisco": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "San Francisco": {
+    "Portland": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Green",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Los Angeles": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Salt Lake City": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Santa Fe": {
+    "Denver": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "El Paso": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Oklahoma City": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Phoenix": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Sault Ste. Marie": {
+    "Duluth": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Montreal": {
+      "distance": 5,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Toronto": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Toronto",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Winnipeg": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Seattle": {
+    "Calgary": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Helena": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Yellow",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Portland": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Vancouver": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Toronto": {
+    "Chicago": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Duluth": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Pink",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Montreal": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Sault Ste. Marie": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Vancouver": {
+    "Calgary": {
+      "distance": 3,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Seattle": {
+      "distance": 1,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Washington": {
+    "New York": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Orange",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Pittsburgh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Raleigh": {
+      "distance": 2,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        },
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  },
+
+  "Winnipeg": {
+    "Calgary": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "White",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Duluth": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Black",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Helena": {
+      "distance": 4,
+      "connections": [
+        {
+          "color": "Blue",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    },
+    "Sault Ste. Marie": {
+      "distance": 6,
+      "connections": [
+        {
+          "color": "Any",
+          "locomotives": 0,
+          "tunnels": 0
+        }
+      ]
+    }
+  }
+}
