@@ -12,14 +12,10 @@ pub struct Route {
     connections: Vec<String>,
 }
 
-#[derive(Debug, Deserialize)]
-struct L0 {
-    routes: HashMap<String, L1>,
-}
 
 #[derive(Debug, Deserialize)]
-struct L1 {
-    destination_city: HashMap<String, L2>,
+pub struct L1 {
+    destination_city: Option<HashMap<String, Value>>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -35,14 +31,14 @@ struct L3 {
     tunnels: u8,
 }
 
-fn route_file_to_L0(fpath: &str) -> HashMap<String, Value>  {
+fn route_file_to_L0(fpath: &str) -> HashMap<String, HashMap<String, Value>>  {
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
-    let data: HashMap<String, Value> = serde_json::from_str(&route_file_as_string).unwrap();
+    let data: HashMap<String, HashMap<String, Value>> = serde_json::from_str(&route_file_as_string).unwrap();
     return data;
 }
 
-pub fn routes_from_file(fpath: &str) -> HashMap<String, Value> {
-    let route_file_as_map: HashMap<String, Value> = route_file_to_L0(fpath);
+pub fn routes_from_file(fpath: &str) -> HashMap<String, HashMap<String, Value>>  {
+    let route_file_as_map: HashMap<String, HashMap<String, Value>> = route_file_to_L0(fpath);
     return route_file_as_map;
     /*
     let mut final_routes_map: HashMap<String, Vec<Route>> = HashMap::new();
