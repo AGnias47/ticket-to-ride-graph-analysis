@@ -28,3 +28,6 @@ Find the routes with the best point value per difficulty.
 * Find ratio of difficulty per points, not considering paths to routes or 
 points gained from building route
 
+## Acknowledgements
+
+Contributors to [this StackOverflow question](https://stackoverflow.com/questions/72289549/parsing-a-nested-json-in-rust-with-serde-json)
