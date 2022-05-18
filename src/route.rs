@@ -1,4 +1,5 @@
 use serde::Deserialize;
+use serde_json::Value;
 use std::collections::HashMap;
 use std::fs;
 use std::clone::Clone;
@@ -34,14 +35,16 @@ struct L3 {
     tunnels: u8,
 }
 
-fn route_file_to_L0(fpath: &str) -> L0 {
+fn route_file_to_L0(fpath: &str) -> HashMap<String, Value>  {
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
-    let data: L0 = serde_json::from_str(&route_file_as_string).unwrap();
+    let data: HashMap<String, Value> = serde_json::from_str(&route_file_as_string).unwrap();
     return data;
 }
 
-pub fn routes_from_file(fpath: &str) -> HashMap<String, Vec<Route>> {
-    let route_file_as_map: L0 = route_file_to_L0(fpath);
+pub fn routes_from_file(fpath: &str) -> HashMap<String, Value> {
+    let route_file_as_map: HashMap<String, Value> = route_file_to_L0(fpath);
+    return route_file_as_map;
+    /*
     let mut final_routes_map: HashMap<String, Vec<Route>> = HashMap::new();
     for (starting_city, destinations) in &route_file_as_map.routes {
         println!("{}", starting_city);
@@ -62,4 +65,5 @@ pub fn routes_from_file(fpath: &str) -> HashMap<String, Vec<Route>> {
         final_routes_map.insert((*starting_city).clone(), routes_for_city);
     }
     return final_routes_map;
+    */
 }
