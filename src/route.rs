@@ -13,7 +13,7 @@ pub struct Route {
 
 
 #[derive(Debug, Deserialize)]
-pub struct L1 {
+struct L1 {
     #[serde(flatten)]
     destination_city: HashMap<String, L2>,
 }
