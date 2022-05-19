@@ -1,6 +1,7 @@
 # Ticket to Ride - Graph Analysis
 
-Analyzing the board game Ticket to Ride as an undirected graph for various problems.
+Analyzing the board game Ticket to Ride as an undirected graph for various problems. This 
+is currently a work in progress.
 
 ## Data
 
@@ -30,4 +31,4 @@ points gained from building route
 
 ## Acknowledgements
 
-Contributors to [this StackOverflow question](https://stackoverflow.com/questions/72289549/parsing-a-nested-json-in-rust-with-serde-json)
+* Contributors to [this StackOverflow question](https://stackoverflow.com/questions/72289549/parsing-a-nested-json-in-rust-with-serde-json)
