@@ -1,7 +1,7 @@
 use serde::Deserialize;
+use std::clone::Clone;
 use std::collections::HashMap;
 use std::fs;
-use std::clone::Clone;
 
 #[derive(Debug, Eq, PartialEq, Clone, Deserialize, Hash)]
 pub struct Route {
@@ -10,7 +10,6 @@ pub struct Route {
     pub distance: u8,
     pub connections: Vec<String>,
 }
-
 
 #[derive(Debug, Deserialize)]
 struct L1 {
@@ -31,6 +30,18 @@ struct L3 {
     tunnels: u8,
 }
 
+/// Converts the Routes JSON into a hashmap structure
+///
+/// # Arguments
+/// `fpath` - File path to JSON file
+///
+/// # Returns
+/// Hash map where
+/// * key: String corresponding to starting city
+/// * value: Hash map where
+///   * key: String corresponding to destination city
+///   * value: Route object storing route info
+///
 pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Route>> {
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
@@ -42,11 +53,11 @@ pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Rou
             for c in &route_data.connections {
                 conn.push(c.color.clone());
             }
-            let r: Route = Route{
+            let r: Route = Route {
                 source: starting_city.clone(),
                 destination: destination_city.clone(),
                 distance: route_data.distance,
-                connections: conn
+                connections: conn,
             };
             individual_city_hashmap.insert(destination_city.clone(), r);
         }
@@ -55,9 +66,10 @@ pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Rou
     return top_level_hashmap;
 }
 
-
+/// Demos route JSON parsing
 pub fn demo() {
-    let map: HashMap<String, HashMap<String, Route>> = route_file_to_hashmap("mattgawarecki-ticket-to-ride/usa.routes.json");
+    let map: HashMap<String, HashMap<String, Route>> =
+        route_file_to_hashmap("mattgawarecki-ticket-to-ride/usa.routes.json");
     println!("---Cities---");
     for (k, _) in &map {
         println!("{}", k);
@@ -75,4 +87,3 @@ pub fn demo() {
         println!("{} ", c);
     }
 }
-
