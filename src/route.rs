@@ -31,34 +31,48 @@ struct L3 {
     tunnels: u8,
 }
 
-fn route_file_to_hashmap(fpath: &str) -> HashMap<String, L1>  {
+pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Route>> {
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
-    return data;
-}
-
-pub fn routes_from_file(fpath: &str) -> HashMap<String, L1>  {
-    let route_file_as_map: HashMap<String, L1> = route_file_to_hashmap(fpath);
-    return route_file_as_map;
+    let mut top_level_hashmap: HashMap<String, HashMap<String, Route>> = HashMap::new();
+    for (starting_city, destination_cities) in &data {
+        let mut individual_city_hashmap: HashMap<String, Route> = HashMap::new();
+        for (destination_city, route_data) in &destination_cities.destination_city {
+            let mut conn: Vec<String> = Vec::new();
+            for c in &route_data.connections {
+                conn.push(c.color.clone());
+            }
+            let r: Route = Route{
+                source: starting_city.clone(),
+                destination: destination_city.clone(),
+                distance: route_data.distance,
+                connections: conn
+            };
+            individual_city_hashmap.insert(destination_city.clone(), r);
+        }
+        top_level_hashmap.insert(starting_city.clone(), individual_city_hashmap);
+    }
+    return top_level_hashmap;
 }
 
 
 pub fn demo() {
-    let routes: HashMap<String, L1>  = routes_from_file("mattgawarecki-ticket-to-ride/usa.routes.json");
+    let map: HashMap<String, HashMap<String, Route>> = route_file_to_hashmap("mattgawarecki-ticket-to-ride/usa.routes.json");
     println!("---Cities---");
-    for (k, _) in &routes {
+    for (k, _) in &map {
         println!("{}", k);
     }
-    let chicago: &HashMap<String, L2> = &routes.get("Chicago").unwrap().destination_city;
+    let chicago: &HashMap<String, Route> = &map.get("Chicago").unwrap();
     println!("---Destinations from Chicago---");
     for (k, _) in chicago {
         println!("{}", k);
     }
-    let to_omaha: &L2 = chicago.get("Omaha").unwrap();
+    let to_omaha: &Route = chicago.get("Omaha").unwrap();
     println!("---Data on Route to Omaha---");
     println!("Distance: {}", to_omaha.distance);
     print!("Connections: ");
     for c in &to_omaha.connections {
-        println!("{} ", c.color);
+        println!("{} ", c);
     }
 }
+
