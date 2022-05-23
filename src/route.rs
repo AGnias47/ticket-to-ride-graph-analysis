@@ -50,7 +50,7 @@ pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Rou
         locomotives: u8,
         tunnels: u8,
     }
-    
+
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
     let mut top_level_hashmap: HashMap<String, HashMap<String, Route>> = HashMap::new();

@@ -22,7 +22,7 @@ pub fn ticket_file_to_vec(fpath: &str) -> Vec<Ticket> {
         cities: Vec<String>,
         points: u8,
     }
-    
+
     let ticket_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: Vec<TicketSerializer> =
         serde_json::from_str(&ticket_file_as_string).expect("Nothing");
