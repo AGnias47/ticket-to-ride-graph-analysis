@@ -1,14 +1,23 @@
 use serde::Deserialize;
-use std::clone::Clone;
 use std::collections::HashMap;
 use std::fs;
 
-#[derive(Debug, Eq, PartialEq, Clone, Deserialize, Hash)]
+
+#[derive(Debug, Deserialize)]
 pub struct Route {
     pub source: String,
     pub destination: String,
     pub distance: u8,
     pub connections: Vec<String>,
+}
+
+impl Route {
+    fn to_string(&self) -> String {
+        return format!(
+            "Source: {}\nDestination: {}\nDistance: {}\nConnections: {:?}",
+            &self.source, &self.destination, &self.distance, &self.connections
+        );
+    }
 }
 
 #[derive(Debug, Deserialize)]
@@ -23,7 +32,7 @@ struct L2 {
     connections: Vec<L3>,
 }
 
-#[derive(Debug, Deserialize, Clone)]
+#[derive(Debug, Deserialize)]
 struct L3 {
     color: String,
     locomotives: u8,
@@ -81,9 +90,6 @@ pub fn demo() {
     }
     let to_omaha: &Route = chicago.get("Omaha").unwrap();
     println!("---Data on Route to Omaha---");
-    println!("Distance: {}", to_omaha.distance);
-    print!("Connections: ");
-    for c in &to_omaha.connections {
-        println!("{} ", c);
-    }
+    println!("{}", to_omaha.to_string());
+    println!("------------------------");
 }
