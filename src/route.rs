@@ -2,7 +2,6 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use std::fs;
 
-
 #[derive(Debug, Deserialize)]
 pub struct Route {
     pub source: String,
@@ -20,25 +19,6 @@ impl Route {
     }
 }
 
-#[derive(Debug, Deserialize)]
-struct L1 {
-    #[serde(flatten)]
-    destination_city: HashMap<String, L2>,
-}
-
-#[derive(Debug, Deserialize)]
-struct L2 {
-    distance: u8,
-    connections: Vec<L3>,
-}
-
-#[derive(Debug, Deserialize)]
-struct L3 {
-    color: String,
-    locomotives: u8,
-    tunnels: u8,
-}
-
 /// Converts the Routes JSON into a hashmap structure
 ///
 /// # Arguments
@@ -52,6 +32,25 @@ struct L3 {
 ///   * value: Route object storing route info
 ///
 pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Route>> {
+    #[derive(Debug, Deserialize)]
+    struct L1 {
+        #[serde(flatten)]
+        destination_city: HashMap<String, L2>,
+    }
+
+    #[derive(Debug, Deserialize)]
+    struct L2 {
+        distance: u8,
+        connections: Vec<L3>,
+    }
+
+    #[derive(Debug, Deserialize)]
+    struct L3 {
+        color: String,
+        locomotives: u8,
+        tunnels: u8,
+    }
+    
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
     let mut top_level_hashmap: HashMap<String, HashMap<String, Route>> = HashMap::new();

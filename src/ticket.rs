@@ -7,13 +7,22 @@ pub struct Ticket {
     pub points: u8,
 }
 
-#[derive(Debug, Deserialize)]
-pub struct TicketSerializer {
-    cities: Vec<String>,
-    points: u8,
+impl Ticket {
+    fn to_string(&self) -> String {
+        return format!(
+            "Source: {}\nDestination: {}\nPoints: {}",
+            &self.source, &self.destination, &self.points
+        );
+    }
 }
 
 pub fn ticket_file_to_vec(fpath: &str) -> Vec<Ticket> {
+    #[derive(Debug, Deserialize)]
+    pub struct TicketSerializer {
+        cities: Vec<String>,
+        points: u8,
+    }
+    
     let ticket_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: Vec<TicketSerializer> =
         serde_json::from_str(&ticket_file_as_string).expect("Nothing");
@@ -27,15 +36,6 @@ pub fn ticket_file_to_vec(fpath: &str) -> Vec<Ticket> {
         tickets.push(ticket);
     }
     return tickets;
-}
-
-impl Ticket {
-    fn to_string(&self) -> String {
-        return format!(
-            "Source: {}\nDestination: {}\nPoints: {}",
-            &self.source, &self.destination, &self.points
-        );
-    }
 }
 
 pub fn demo() {
