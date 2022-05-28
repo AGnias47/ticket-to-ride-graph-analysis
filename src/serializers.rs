@@ -1,3 +1,6 @@
+extern crate serde;
+extern crate serde_json;
+
 use serde::Deserialize;
 use std::collections::HashMap;
 

@@ -1,10 +1,8 @@
 use super::serializers::L1;
 use std::collections::HashMap;
 use std::fs;
-use std::convert::TryFrom;
 
 const CITIES: usize = 36;
-const CITIES_U8: u8 = 36;
 
 /// Matrix implementation from https://www.reddit.com/r/rust/comments/icpdvh/rust_matrix_structure/
 pub struct Matrix {
@@ -22,12 +20,28 @@ impl Matrix {
     }
 
     pub fn print(&self) {
-        for r in self.rows {
+        print!("     ");
+        for (col_num, _) in self.rows.iter().enumerate() {
+            print!("{} ", col_num);
+            if (col_num < 10) {
+                print!(" ");
+            }
+        }
+        println!();
+        for _ in 1..113 {
+            print!("-")
+        }
+        println!();
+        for (row_num, r) in self.rows.iter().enumerate() {
+            print!("{}: ", row_num);
+            if (row_num < 10) {
+                print!(" ");
+            }
             print!("[");
             for (i, c) in r.iter().enumerate() {
                 print!("{}", c);
-                if c < &(CITIES as u8 - i as u8 - 1) {
-                    print!(" ");
+                if i < CITIES - 1 {
+                    print!("  ");
                 }
             }
             println!("]");
@@ -44,25 +58,29 @@ pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
     let mut color_matrix: Matrix = init_matrix();
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
+    let mut city_index_map: HashMap<String, usize> = HashMap::new();
     let mut i: usize = 0;
+    for (starting_city, _) in &data {
+        city_index_map.insert(starting_city.clone(), i);
+        i += 1;
+    }
     // Need to correlate cities with an index; right now just throws them in starting from 0
     for (starting_city, destination_cities) in &data {
-        let mut j: usize = 0;
         for (destination_city, route_data) in &destination_cities.destination_city {
             let mut conn: Vec<String> = Vec::new();
             for c in &route_data.connections {
                 conn.push(c.color.clone());
             }
-            point_matrix.set(i, j, route_data.distance);
-            color_matrix.set(i, j, 0);
-            j += 1;
+            println!("{} to {}, {}", starting_city, destination_city, route_data.distance);
+            println!("{} to {}", *city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)));
+            point_matrix.set(*city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)), route_data.distance);
+            color_matrix.set(*city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)), 0);
         }
-        i += 1;
     }
     return point_matrix;
 }
 
 pub fn demo() {
-    let matrix: Matrix = route_file_to_adjacency_matrix("mattgawarecki-ticket-to-ride/usa.routes.json");
+    let matrix = route_file_to_adjacency_matrix("mattgawarecki-ticket-to-ride/usa.routes.json");
     matrix.print();
 }
