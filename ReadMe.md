@@ -31,4 +31,6 @@ points gained from building route
 
 ## Acknowledgements
 
-* Contributors to [this StackOverflow question](https://stackoverflow.com/questions/72289549/parsing-a-nested-json-in-rust-with-serde-json)
+* Contributors to the following StackOverflow questions:
+  * [Parsing a nested JSON object](https://stackoverflow.com/questions/72289549/parsing-a-nested-json-in-rust-with-serde-json)
+  * [Reading an array of strings from a file in Rust](https://stackoverflow.com/questions/72416538/reading-an-array-of-strings-from-a-file-in-rust/72416571#72416571)

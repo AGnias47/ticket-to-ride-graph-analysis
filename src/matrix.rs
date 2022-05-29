@@ -1,4 +1,5 @@
 use super::serializers::L1;
+use super::validate::valid_cities;
 use std::collections::HashMap;
 use std::fs;
 
@@ -50,7 +51,9 @@ impl Matrix {
 }
 
 pub fn init_matrix() -> Matrix {
-    return Matrix{rows: [[0; CITIES]; CITIES]};
+    return Matrix {
+        rows: [[0; CITIES]; CITIES],
+    };
 }
 
 pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
@@ -60,21 +63,41 @@ pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
     let mut city_index_map: HashMap<String, usize> = HashMap::new();
     let mut i: usize = 0;
-    for (starting_city, _) in &data {
-        city_index_map.insert(starting_city.clone(), i);
+    for city in &valid_cities() {
+        city_index_map.insert(city.clone(), i);
         i += 1;
     }
-    // Need to correlate cities with an index; right now just throws them in starting from 0
     for (starting_city, destination_cities) in &data {
         for (destination_city, route_data) in &destination_cities.destination_city {
             let mut conn: Vec<String> = Vec::new();
             for c in &route_data.connections {
                 conn.push(c.color.clone());
             }
-            println!("{} to {}, {}", starting_city, destination_city, route_data.distance);
-            println!("{} to {}", *city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)));
-            point_matrix.set(*city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)), route_data.distance);
-            color_matrix.set(*city_index_map.get(starting_city).unwrap_or(&(0 as usize)), *city_index_map.get(destination_city).unwrap_or(&(0 as usize)), 0);
+            println!(
+                "{} to {}, {}",
+                starting_city, destination_city, route_data.distance
+            );
+            println!(
+                "{} to {}",
+                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
+                *city_index_map
+                    .get(destination_city)
+                    .unwrap_or(&(0 as usize))
+            );
+            point_matrix.set(
+                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
+                *city_index_map
+                    .get(destination_city)
+                    .unwrap_or(&(0 as usize)),
+                route_data.distance,
+            );
+            color_matrix.set(
+                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
+                *city_index_map
+                    .get(destination_city)
+                    .unwrap_or(&(0 as usize)),
+                0,
+            );
         }
     }
     return point_matrix;
