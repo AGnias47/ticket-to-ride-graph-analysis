@@ -91,7 +91,7 @@ impl Matrix {
     }
 }
 
-pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
+pub fn route_file_to_matrix(fpath: &str) -> Matrix {
     let mut point_matrix: Matrix = Matrix::new();
     let mut color_matrix: Matrix = Matrix::new();
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
@@ -121,6 +121,6 @@ pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
 }
 
 pub fn demo() {
-    let matrix = route_file_to_adjacency_matrix("mattgawarecki-ticket-to-ride/usa.routes.json");
+    let matrix = route_file_to_matrix("mattgawarecki-ticket-to-ride/usa.routes.json");
     matrix.print();
 }

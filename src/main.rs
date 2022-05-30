@@ -3,6 +3,7 @@ mod ticket;
 mod validate;
 mod matrix;
 mod serializers;
+mod graph;
 
 use std::collections::HashMap;
 
@@ -14,4 +15,5 @@ fn main() {
     route::demo();
     ticket::demo();
     matrix::demo();
+    graph::demo();
 }
