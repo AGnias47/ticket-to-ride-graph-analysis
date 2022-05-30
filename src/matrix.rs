@@ -7,17 +7,58 @@ const CITIES: usize = 36;
 
 /// Matrix implementation from https://www.reddit.com/r/rust/comments/icpdvh/rust_matrix_structure/
 pub struct Matrix {
-    rows: [[u8; CITIES]; CITIES],
+    pub rows: [[u8; CITIES]; CITIES],
+    city_index_map: HashMap<String, usize>,
 }
 
 impl Matrix {
-    pub fn get(&self, row: usize, col: usize) -> Option<u8> {
+    pub fn new() -> Matrix {
+        let mut city_index_map: HashMap<String, usize> = HashMap::new();
+        let mut i: usize = 0;
+        for city in &valid_cities() {
+            city_index_map.insert(city.clone(), i);
+            i += 1;
+        }
+        return Matrix {
+            rows: [[0; CITIES]; CITIES],
+            city_index_map: city_index_map,
+        };
+    }
+
+    pub fn index_get(&self, row: usize, col: usize) -> Option<u8> {
         let val = self.rows.get(row)?.get(col)?;
         Some(*val)
     }
 
-    pub fn set(&mut self, row: usize, col: usize, value: u8) {
+    pub fn index_set(&mut self, row: usize, col: usize, value: u8) {
         self.rows[row][col] = value;
+    }
+
+    pub fn get(&self, starting_city: String, destination_city: String) -> Option<u8> {
+        return self.index_get(
+            *self
+                .city_index_map
+                .get(&starting_city)
+                .unwrap_or(&(0 as usize)),
+            *self
+                .city_index_map
+                .get(&destination_city)
+                .unwrap_or(&(0 as usize))
+        );
+    }
+
+    pub fn set(&mut self, starting_city: String, destination_city: String, weight: u8) {
+        self.index_set(
+            *self
+                .city_index_map
+                .get(&starting_city)
+                .unwrap_or(&(0 as usize)),
+            *self
+                .city_index_map
+                .get(&destination_city)
+                .unwrap_or(&(0 as usize)),
+            weight,
+        );
     }
 
     pub fn print(&self) {
@@ -50,23 +91,11 @@ impl Matrix {
     }
 }
 
-pub fn init_matrix() -> Matrix {
-    return Matrix {
-        rows: [[0; CITIES]; CITIES],
-    };
-}
-
 pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
-    let mut point_matrix: Matrix = init_matrix();
-    let mut color_matrix: Matrix = init_matrix();
+    let mut point_matrix: Matrix = Matrix::new();
+    let mut color_matrix: Matrix = Matrix::new();
     let route_file_as_string = fs::read_to_string(fpath).expect("Unable to read file");
     let data: HashMap<String, L1> = serde_json::from_str(&route_file_as_string).unwrap();
-    let mut city_index_map: HashMap<String, usize> = HashMap::new();
-    let mut i: usize = 0;
-    for city in &valid_cities() {
-        city_index_map.insert(city.clone(), i);
-        i += 1;
-    }
     for (starting_city, destination_cities) in &data {
         for (destination_city, route_data) in &destination_cities.destination_city {
             let mut conn: Vec<String> = Vec::new();
@@ -79,25 +108,13 @@ pub fn route_file_to_adjacency_matrix(fpath: &str) -> Matrix {
             );
             println!(
                 "{} to {}",
-                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
-                *city_index_map
+                *point_matrix.city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
+                *point_matrix.city_index_map
                     .get(destination_city)
                     .unwrap_or(&(0 as usize))
             );
-            point_matrix.set(
-                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
-                *city_index_map
-                    .get(destination_city)
-                    .unwrap_or(&(0 as usize)),
-                route_data.distance,
-            );
-            color_matrix.set(
-                *city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
-                *city_index_map
-                    .get(destination_city)
-                    .unwrap_or(&(0 as usize)),
-                0,
-            );
+            point_matrix.set(starting_city.clone(), destination_city.clone(), route_data.distance);
+            color_matrix.set(starting_city.clone(), destination_city.clone(), 0);
         }
     }
     return point_matrix;
