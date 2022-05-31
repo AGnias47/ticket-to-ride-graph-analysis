@@ -9,6 +9,7 @@ const CITIES: usize = 36;
 pub struct Matrix {
     pub rows: [[u8; CITIES]; CITIES],
     city_index_map: HashMap<String, usize>,
+    pub size: usize
 }
 
 impl Matrix {
@@ -22,6 +23,7 @@ impl Matrix {
         return Matrix {
             rows: [[0; CITIES]; CITIES],
             city_index_map: city_index_map,
+            size: CITIES
         };
     }
 

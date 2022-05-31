@@ -16,4 +16,6 @@ fn main() {
     ticket::demo();
     matrix::demo();
     graph::demo();
+    let graph: graph::Graph = graph::Graph::new();
+    graph.BFS(graph.get_first_vertex());
 }
