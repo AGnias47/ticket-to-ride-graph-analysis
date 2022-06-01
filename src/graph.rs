@@ -3,6 +3,7 @@ use super::serializers::L1;
 use super::validate::valid_cities;
 use std::cmp::{Eq, PartialEq};
 use std::collections::{HashMap, HashSet};
+use std::collections::hash_map::Entry;
 use std::fs;
 use std::ops::{Index, IndexMut};
 extern crate queues;
@@ -81,7 +82,6 @@ impl Graph {
         s: Vertex,
     ) -> (
         Vec<Vertex>,
-        HashMap<Vertex, GraphColor>,
         HashMap<Vertex, Option<Vertex>>,
         HashMap<Vertex, i8>,
     ) {
@@ -113,11 +113,43 @@ impl Graph {
             colors.insert(u.clone(), GraphColor::Black);
             order.push(u.clone());
         }
-        return (order, colors, predecessor, distance);
+        return (order, predecessor, distance);
     }
 }
 
+pub fn distance_from_bfs_origin(
+    from: Vertex,
+    predecessor: HashMap<Vertex, Option<Vertex>>,
+    distance: HashMap<Vertex, i8>,
+) -> u8 {
+    let mut distance_to_origin: i8 = 0;
+    let mut predecessor_option: Option<Vertex> = match predecessor.get(&from) {
+        Some(val) => val.clone(),
+        None => None
+    };
+    let mut destination: Vertex = from;
+    while predecessor_option.is_some() {
+        distance_to_origin += distance.get(&destination).unwrap().clone();
+        predecessor_option = match predecessor.get(&predecessor_option.unwrap()) {
+            Some(val) => val.clone(),
+            None => None
+        };
+        if predecessor_option.is_some() {
+            destination = predecessor_option.clone().unwrap();
+        }
+    }
+    return distance_to_origin as u8;
+}
+
 pub fn demo() {
+    let graph = Graph::new();
+    let v: Vertex = Vertex{city: "New York".to_string()};
+    let (order, predecessor, distance) = graph.BFS(v);
+    let destination: Vertex = Vertex{city: "Nashville".to_string()};
+    println!("{}", distance_from_bfs_origin(destination, predecessor, distance));
+}
+
+pub fn matrix_demo() {
     let graph = Graph::new();
     for vertex in graph.vertices {
         println!("{}", vertex.city);
