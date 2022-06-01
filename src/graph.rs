@@ -146,16 +146,22 @@ pub fn demo() {
     let v: Vertex = Vertex{city: "New York".to_string()};
     let (order, predecessor, distance) = graph.BFS(v);
     let destination: Vertex = Vertex{city: "Nashville".to_string()};
-    println!("{}", distance_from_bfs_origin(destination, predecessor, distance));
+    println!("Distance from New York to Nashville (from BFS): {}", distance_from_bfs_origin(destination, predecessor, distance));
 }
 
-pub fn matrix_demo() {
-    let graph = Graph::new();
-    for vertex in graph.vertices {
-        println!("{}", vertex.city);
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_BFS() {
+        let graph = Graph::new();
+        let origin: Vertex = Vertex{city: "New York".to_string()};
+        let (order, predecessor, distance) = graph.BFS(origin);
+        let boston: Vertex = Vertex{city: "Boston".to_string()};
+        let nashville: Vertex = Vertex{city: "Nashville".to_string()};
+        let ssm: Vertex = Vertex{city: "Sault Ste. Marie".to_string()};
+        assert_eq!(2, distance_from_bfs_origin(boston, predecessor.clone(), distance.clone()));
+        assert_eq!(6, distance_from_bfs_origin(nashville, predecessor.clone(), distance.clone()));
+        assert_eq!(8, distance_from_bfs_origin(ssm, predecessor.clone(), distance.clone()));
     }
-    for edge in graph.edges {
-        println!("{} to {}, {}", edge.origin, edge.destination, edge.weight);
-    }
-    graph.adj_matrix.print();
 }
