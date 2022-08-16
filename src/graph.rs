@@ -2,8 +2,8 @@ use super::matrix::{route_file_to_matrix, Matrix};
 use super::serializers::L1;
 use super::validate::valid_cities;
 use std::cmp::{Eq, PartialEq};
-use std::collections::{HashMap, HashSet};
 use std::collections::hash_map::Entry;
+use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::ops::{Index, IndexMut};
 extern crate queues;
@@ -115,6 +115,53 @@ impl Graph {
         }
         return (order, predecessor, distance);
     }
+
+    pub fn DFS(
+        &self,
+        verticies_arg: Option<HashSet<Vertex>>,
+    ) -> (
+        Vec<Vertex>,
+        HashMap<Vertex, GraphColor>,
+        HashMap<Vertex, Option<Vertex>>,
+        HashMap<Vertex, Option<Vertex>>,
+        HashMap<Vertex, Option<Vertex>>,
+    ) {
+        let mut verticies: HashSet<Vertex>;
+        if verticies_arg.is_some() {
+            verticies = verticies_arg.unwrap();
+        } else {
+            verticies = self.vertices.clone();
+        }
+        let mut order: Vec<Vertex> = Vec::new();
+        let mut color: HashMap<Vertex, GraphColor> = HashMap::new();
+        let mut predecessor: HashMap<Vertex, Option<Vertex>> = HashMap::new();
+        let mut discovered: HashMap<Vertex, Option<Vertex>> = HashMap::new();
+        let mut finished: HashMap<Vertex, Option<Vertex>> = HashMap::new();
+        for vertex in &self.vertices {
+            color.insert(vertex.clone(), GraphColor::White);
+            predecessor.insert(vertex.clone(), None);
+        }
+        let mut t: u8 = 0;
+        for v in &verticies {
+            if color.get(v).unwrap().clone() == GraphColor::White {
+                self.DFS_visit(v.clone(), t, &order, &mut color, &predecessor, &discovered, &finished);
+            }
+        }
+        return (order, color, predecessor, discovered, finished);
+    }
+
+    fn DFS_visit(
+        &self,
+        u: Vertex,
+        t: u8,
+        order: &Vec<Vertex>,
+        color: &mut HashMap<Vertex, GraphColor>,
+        predecessor: &HashMap<Vertex, Option<Vertex>>,
+        discovered: &HashMap<Vertex, Option<Vertex>>,
+        finished: &HashMap<Vertex, Option<Vertex>>,
+    ) {
+        color.insert(u.clone(), GraphColor::Grey);
+    }
 }
 
 pub fn distance_from_bfs_origin(
@@ -125,14 +172,14 @@ pub fn distance_from_bfs_origin(
     let mut distance_to_origin: i8 = 0;
     let mut predecessor_option: Option<Vertex> = match predecessor.get(&from) {
         Some(val) => val.clone(),
-        None => None
+        None => None,
     };
     let mut destination: Vertex = from;
     while predecessor_option.is_some() {
         distance_to_origin += distance.get(&destination).unwrap().clone();
         predecessor_option = match predecessor.get(&predecessor_option.unwrap()) {
             Some(val) => val.clone(),
-            None => None
+            None => None,
         };
         if predecessor_option.is_some() {
             destination = predecessor_option.clone().unwrap();
@@ -143,10 +190,17 @@ pub fn distance_from_bfs_origin(
 
 pub fn demo() {
     let graph = Graph::new();
-    let v: Vertex = Vertex{city: "New York".to_string()};
+    let v: Vertex = Vertex {
+        city: "New York".to_string(),
+    };
     let (order, predecessor, distance) = graph.BFS(v);
-    let destination: Vertex = Vertex{city: "Nashville".to_string()};
-    println!("Distance from New York to Nashville (from BFS): {}", distance_from_bfs_origin(destination, predecessor, distance));
+    let destination: Vertex = Vertex {
+        city: "Nashville".to_string(),
+    };
+    println!(
+        "Distance from New York to Nashville (from BFS): {}",
+        distance_from_bfs_origin(destination, predecessor, distance)
+    );
 }
 
 #[cfg(test)]
@@ -155,13 +209,30 @@ mod tests {
     #[test]
     fn test_BFS() {
         let graph = Graph::new();
-        let origin: Vertex = Vertex{city: "New York".to_string()};
+        let origin: Vertex = Vertex {
+            city: "New York".to_string(),
+        };
         let (order, predecessor, distance) = graph.BFS(origin);
-        let boston: Vertex = Vertex{city: "Boston".to_string()};
-        let nashville: Vertex = Vertex{city: "Nashville".to_string()};
-        let ssm: Vertex = Vertex{city: "Sault Ste. Marie".to_string()};
-        assert_eq!(2, distance_from_bfs_origin(boston, predecessor.clone(), distance.clone()));
-        assert_eq!(6, distance_from_bfs_origin(nashville, predecessor.clone(), distance.clone()));
-        assert_eq!(8, distance_from_bfs_origin(ssm, predecessor.clone(), distance.clone()));
+        let boston: Vertex = Vertex {
+            city: "Boston".to_string(),
+        };
+        let nashville: Vertex = Vertex {
+            city: "Nashville".to_string(),
+        };
+        let ssm: Vertex = Vertex {
+            city: "Sault Ste. Marie".to_string(),
+        };
+        assert_eq!(
+            2,
+            distance_from_bfs_origin(boston, predecessor.clone(), distance.clone())
+        );
+        assert_eq!(
+            6,
+            distance_from_bfs_origin(nashville, predecessor.clone(), distance.clone())
+        );
+        assert_eq!(
+            8,
+            distance_from_bfs_origin(ssm, predecessor.clone(), distance.clone())
+        );
     }
 }
