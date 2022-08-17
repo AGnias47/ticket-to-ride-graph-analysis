@@ -1,11 +1,8 @@
-use super::matrix::{route_file_to_matrix, Matrix};
+use super::matrix::{Matrix};
 use super::serializers::L1;
-use super::validate::valid_cities;
 use std::cmp::{Eq, PartialEq};
-use std::collections::hash_map::Entry;
 use std::collections::{HashMap, HashSet};
 use std::fs;
-use std::ops::{Index, IndexMut};
 extern crate queues;
 use queues::*;
 
@@ -73,6 +70,10 @@ impl Graph {
         };
     }
 
+    pub fn size(&self) -> usize {
+        return self.vertices.len();
+    }
+
     pub fn get_first_vertex(&self) -> Vertex {
         return self.vertices.iter().next().unwrap().clone();
     }
@@ -121,10 +122,7 @@ impl Graph {
         verticies_arg: Option<HashSet<Vertex>>,
     ) -> (
         Vec<Vertex>,
-        HashMap<Vertex, GraphColor>,
-        HashMap<Vertex, Option<Vertex>>,
-        HashMap<Vertex, Option<Vertex>>,
-        HashMap<Vertex, Option<Vertex>>,
+        HashMap<Vertex, Option<Vertex>>
     ) {
         let mut verticies: HashSet<Vertex>;
         if verticies_arg.is_some() {
@@ -135,8 +133,6 @@ impl Graph {
         let mut order: Vec<Vertex> = Vec::new();
         let mut color: HashMap<Vertex, GraphColor> = HashMap::new();
         let mut predecessor: HashMap<Vertex, Option<Vertex>> = HashMap::new();
-        let mut discovered: HashMap<Vertex, Option<Vertex>> = HashMap::new();
-        let mut finished: HashMap<Vertex, Option<Vertex>> = HashMap::new();
         for vertex in &self.vertices {
             color.insert(vertex.clone(), GraphColor::White);
             predecessor.insert(vertex.clone(), None);
@@ -144,23 +140,26 @@ impl Graph {
         let mut t: u8 = 0;
         for v in &verticies {
             if color.get(v).unwrap().clone() == GraphColor::White {
-                self.DFS_visit(v.clone(), t, &order, &mut color, &predecessor, &discovered, &finished);
+                self.DFS_visit(v.clone(), &order, &mut color, &predecessor);
             }
         }
-        return (order, color, predecessor, discovered, finished);
+        return (order, predecessor);
     }
 
     fn DFS_visit(
         &self,
         u: Vertex,
-        t: u8,
         order: &Vec<Vertex>,
         color: &mut HashMap<Vertex, GraphColor>,
         predecessor: &HashMap<Vertex, Option<Vertex>>,
-        discovered: &HashMap<Vertex, Option<Vertex>>,
-        finished: &HashMap<Vertex, Option<Vertex>>,
     ) {
         color.insert(u.clone(), GraphColor::Grey);
+        for v in 1..self.size() + 1 {
+            if self.adj_matrix[u][v] == 1 {
+
+            }
+
+        }
     }
 }
 
