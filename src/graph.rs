@@ -116,51 +116,6 @@ impl Graph {
         }
         return (order, predecessor, distance);
     }
-
-    pub fn DFS(
-        &self,
-        verticies_arg: Option<HashSet<Vertex>>,
-    ) -> (
-        Vec<Vertex>,
-        HashMap<Vertex, Option<Vertex>>
-    ) {
-        let mut verticies: HashSet<Vertex>;
-        if verticies_arg.is_some() {
-            verticies = verticies_arg.unwrap();
-        } else {
-            verticies = self.vertices.clone();
-        }
-        let mut order: Vec<Vertex> = Vec::new();
-        let mut color: HashMap<Vertex, GraphColor> = HashMap::new();
-        let mut predecessor: HashMap<Vertex, Option<Vertex>> = HashMap::new();
-        for vertex in &self.vertices {
-            color.insert(vertex.clone(), GraphColor::White);
-            predecessor.insert(vertex.clone(), None);
-        }
-        let mut t: u8 = 0;
-        for v in &verticies {
-            if color.get(v).unwrap().clone() == GraphColor::White {
-                self.DFS_visit(v.clone(), &order, &mut color, &predecessor);
-            }
-        }
-        return (order, predecessor);
-    }
-
-    fn DFS_visit(
-        &self,
-        u: Vertex,
-        order: &Vec<Vertex>,
-        color: &mut HashMap<Vertex, GraphColor>,
-        predecessor: &HashMap<Vertex, Option<Vertex>>,
-    ) {
-        color.insert(u.clone(), GraphColor::Grey);
-        for v in 1..self.size() + 1 {
-            if self.adj_matrix[u][v] == 1 {
-
-            }
-
-        }
-    }
 }
 
 pub fn distance_from_bfs_origin(
@@ -196,10 +151,12 @@ pub fn demo() {
     let destination: Vertex = Vertex {
         city: "Nashville".to_string(),
     };
-    println!(
-        "Distance from New York to Nashville (from BFS): {}",
-        distance_from_bfs_origin(destination, predecessor, distance)
-    );
+    unsafe {
+        println!(
+            "Distance from New York to Nashville (from BFS): {}",
+            distance_from_bfs_origin(destination, predecessor, distance)
+        );
+    }
 }
 
 #[cfg(test)]

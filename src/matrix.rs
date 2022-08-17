@@ -64,31 +64,33 @@ impl Matrix {
     }
 
     pub fn print(&self) {
-        print!("     ");
-        for (col_num, _) in self.rows.iter().enumerate() {
-            print!("{} ", col_num);
-            if (col_num < 10) {
-                print!(" ");
-            }
-        }
-        println!();
-        for _ in 1..113 {
-            print!("-")
-        }
-        println!();
-        for (row_num, r) in self.rows.iter().enumerate() {
-            print!("{}: ", row_num);
-            if (row_num < 10) {
-                print!(" ");
-            }
-            print!("[");
-            for (i, c) in r.iter().enumerate() {
-                print!("{}", c);
-                if i < CITIES - 1 {
-                    print!("  ");
+        unsafe {
+            print!("     ");
+            for (col_num, _) in self.rows.iter().enumerate() {
+                print!("{} ", col_num);
+                if (col_num < 10) {
+                    print!(" ");
                 }
             }
-            println!("]");
+            println!();
+            for _ in 1..113 {
+                print!("-")
+            }
+            println!();
+            for (row_num, r) in self.rows.iter().enumerate() {
+                print!("{}: ", row_num);
+                if (row_num < 10) {
+                    print!(" ");
+                }
+                print!("[");
+                for (i, c) in r.iter().enumerate() {
+                    print!("{}", c);
+                    if i < CITIES - 1 {
+                        print!("  ");
+                    }
+                }
+                println!("]");
+            }
         }
     }
 }
@@ -104,17 +106,19 @@ pub fn route_file_to_matrix(fpath: &str) -> Matrix {
             for c in &route_data.connections {
                 conn.push(c.color.clone());
             }
-            println!(
-                "{} to {}, {}",
-                starting_city, destination_city, route_data.distance
-            );
-            println!(
-                "{} to {}",
-                *point_matrix.city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
-                *point_matrix.city_index_map
-                    .get(destination_city)
-                    .unwrap_or(&(0 as usize))
-            );
+            unsafe {
+                println!(
+                    "{} to {}, {}",
+                    starting_city, destination_city, route_data.distance
+                );
+                println!(
+                    "{} to {}",
+                    *point_matrix.city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
+                    *point_matrix.city_index_map
+                        .get(destination_city)
+                        .unwrap_or(&(0 as usize))
+                );
+            }
             point_matrix.set(starting_city.clone(), destination_city.clone(), route_data.distance);
             color_matrix.set(starting_city.clone(), destination_city.clone(), 0);
         }
