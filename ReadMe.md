@@ -1,7 +1,8 @@
 # Ticket to Ride - Graph Analysis
 
-Analyzing the board game Ticket to Ride as an undirected graph for various problems. This 
-is currently a work in progress.
+Analyzing the board game Ticket to Ride as an undirected graph to run a breadth-first search (BFS).
+
+Run via `cargo run`.
 
 ## Data
 
@@ -9,16 +10,14 @@ Data is included in the mattgawarecki-ticket-to-ride folder. This data was pulle
 from https://data.world/mattgawarecki/ticket-to-ride under the terms of the MIT 
 license.
 
-## Most Efficient Routes
+## Future Work
 
-Find out which routes gain the most points for the least amount of trains
+### Most Efficient Routes
 
-### Process
-
-* Find route with best ratio of points per train. Calculate this using points 
+Find route with best ratio of points per train. Calculate this using points 
 per each route as well as points of finishing the route.
 
-## Easiest Routes
+### Easiest Routes
 
 Find the routes with the best point value per difficulty.
 
