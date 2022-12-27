@@ -22,7 +22,7 @@ pub struct Edge {
 
 #[derive(Eq, PartialEq, Hash, Clone)]
 pub struct Vertex {
-    city: String,
+    pub city: String,
 }
 
 pub struct Graph {
@@ -78,18 +78,16 @@ impl Graph {
         return self.vertices.iter().next().unwrap().clone();
     }
 
-    pub fn BFS(
+    pub fn bfs(
         &self,
         s: Vertex,
     ) -> (
-        Vec<Vertex>,
         HashMap<Vertex, Option<Vertex>>,
         HashMap<Vertex, i8>,
     ) {
         let mut colors: HashMap<Vertex, GraphColor> = HashMap::new();
         let mut predecessor: HashMap<Vertex, Option<Vertex>> = HashMap::new();
         let mut distance: HashMap<Vertex, i8> = HashMap::new();
-        let mut order: Vec<Vertex> = Vec::new();
         for vertex in &self.vertices {
             colors.insert(vertex.clone(), GraphColor::White);
             distance.insert(vertex.clone(), -1);
@@ -112,9 +110,8 @@ impl Graph {
                 }
             }
             colors.insert(u.clone(), GraphColor::Black);
-            order.push(u.clone());
         }
-        return (order, predecessor, distance);
+        return (predecessor, distance);
     }
 }
 
@@ -147,28 +144,26 @@ pub fn demo() {
     let v: Vertex = Vertex {
         city: "New York".to_string(),
     };
-    let (order, predecessor, distance) = graph.BFS(v);
+    let (predecessor, distance) = graph.bfs(v);
     let destination: Vertex = Vertex {
         city: "Nashville".to_string(),
     };
-    unsafe {
-        println!(
-            "Distance from New York to Nashville (from BFS): {}",
-            distance_from_bfs_origin(destination, predecessor, distance)
-        );
-    }
+    println!(
+        "Distance from New York to Nashville (from BFS): {}",
+        distance_from_bfs_origin(destination, predecessor, distance)
+    );
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
-    fn test_BFS() {
+    fn test_bfs() {
         let graph = Graph::new();
         let origin: Vertex = Vertex {
             city: "New York".to_string(),
         };
-        let (order, predecessor, distance) = graph.BFS(origin);
+        let (predecessor, distance) = graph.bfs(origin);
         let boston: Vertex = Vertex {
             city: "Boston".to_string(),
         };

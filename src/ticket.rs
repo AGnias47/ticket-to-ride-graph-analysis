@@ -1,6 +1,7 @@
 use serde::Deserialize;
 use std::fs;
 
+#[derive(Clone)]
 pub struct Ticket {
     pub source: String,
     pub destination: String,
@@ -8,7 +9,7 @@ pub struct Ticket {
 }
 
 impl Ticket {
-    fn to_string(&self) -> String {
+    pub fn to_string(&self) -> String {
         return format!(
             "Source: {}\nDestination: {}\nPoints: {}",
             &self.source, &self.destination, &self.points

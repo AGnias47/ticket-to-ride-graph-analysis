@@ -13,12 +13,10 @@ pub struct Route {
 
 impl Route {
     fn to_string(&self) -> String {
-        unsafe {
-            return format!(
-                "Source: {}\nDestination: {}\nDistance: {}\nConnections: {:?}",
-                &self.source, &self.destination, &self.distance, &self.connections
-            );
-        }
+        return format!(
+            "Source: {}\nDestination: {}\nDistance: {}\nConnections: {:?}",
+            &self.source, &self.destination, &self.distance, &self.connections
+        );
     }
 }
 
@@ -60,21 +58,19 @@ pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Rou
 
 /// Demos route JSON parsing
 pub fn demo() {
-    unsafe {
-        let map: HashMap<String, HashMap<String, Route>> =
-            route_file_to_hashmap("mattgawarecki-ticket-to-ride/usa.routes.json");
-        println!("---Cities---");
-        for (k, _) in &map {
-            println!("{}", k);
-        }
-        let chicago: &HashMap<String, Route> = &map.get("Chicago").unwrap();
-        println!("---Destinations from Chicago---");
-        for (k, _) in chicago {
-            println!("{}", k);
-        }
-        let to_omaha: &Route = chicago.get("Omaha").unwrap();
-        println!("---Data on Route to Omaha---");
-        println!("{}", to_omaha.to_string());
-        println!("------------------------");
+    let map: HashMap<String, HashMap<String, Route>> =
+        route_file_to_hashmap("mattgawarecki-ticket-to-ride/usa.routes.json");
+    println!("---Cities---");
+    for (k, _) in &map {
+        println!("{}", k);
     }
+    let chicago: &HashMap<String, Route> = &map.get("Chicago").unwrap();
+    println!("---Destinations from Chicago---");
+    for (k, _) in chicago {
+        println!("{}", k);
+    }
+    let to_omaha: &Route = chicago.get("Omaha").unwrap();
+    println!("---Data on Route to Omaha---");
+    println!("{}", to_omaha.to_string());
+    println!("------------------------");
 }
