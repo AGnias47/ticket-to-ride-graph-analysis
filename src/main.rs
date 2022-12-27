@@ -26,18 +26,14 @@ struct Args {
 fn most_efficient_routes() {
     let tickets: Vec<ticket::Ticket> =
         ticket::ticket_file_to_vec("mattgawarecki-ticket-to-ride/usa.tickets.json");
-    let bfs_graph: graph::Graph = graph::Graph::new();
+    let graph: graph::Graph = graph::Graph::new();
     for t in tickets {
-        let (predecessor, distance) = bfs_graph.bfs(graph::Vertex { city: t.clone().source });
-        let d: u8 = graph::distance_from_bfs_origin(
-            graph::Vertex {
-                city: t.clone().destination,
-            },
-            predecessor,
-            distance,
-        );
+        let ssp = graph.dijkstra_ssp(graph::Vertex { city: t.clone().source });
+        let d: u8 = *ssp.get(&t.clone().destination).unwrap();
         println!("{}", t.to_string());
         println!("Distance: {}", d);
+        let dtpr: f32 = d as f32 / t.clone().points as f32;
+        println!("Distance to Points Ratio: {}", dtpr);
         println!("-----------------");
     }
 }

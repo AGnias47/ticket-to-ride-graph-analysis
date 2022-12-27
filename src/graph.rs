@@ -23,6 +23,13 @@ pub struct Edge {
 #[derive(Eq, PartialEq, Hash, Clone)]
 pub struct Vertex {
     pub city: String,
+
+}
+
+#[derive(Eq, PartialEq, Hash, Clone)]
+pub struct DijkstraVertex {
+    pub city: String,
+    pub weight: u8,    
 }
 
 pub struct Graph {
@@ -109,16 +116,41 @@ impl Graph {
         }
         return (predecessor, distance);
     }
-}
 
-pub fn dijkstra_ssp(
-    &self,
-    s: Vertex,
-) -> (
-    HashMap<Vertex, Option<Vertex>>,
-    HashMap<Vertex, i8>,
-) {
-    
+    pub fn dijkstra_ssp(&self,s: Vertex,) -> HashMap<String, u8> {
+        let mut q: Queue<DijkstraVertex> = queue![];
+        let mut dijkstra_vertices: Vec<DijkstraVertex> = Vec::new();
+        for v in &self.vertices {
+            let mut v_struct: DijkstraVertex = DijkstraVertex{ city: String::from(v.clone().city), weight: u8::MAX };
+            if v_struct.city == s.clone().city {
+                v_struct.weight = 0;
+                q.add(v_struct.clone()).expect("Could not add vertex to queue");
+            }
+            dijkstra_vertices.push(v_struct);
+        }
+        while q.size() > 0 {
+            let u: DijkstraVertex = q.remove().expect("Could not pop vertex from queue");
+            for v in &mut dijkstra_vertices {
+                let weight: u8 = self.adj_matrix.get(u.city.clone(), v.city.clone()).unwrap();
+                if weight != 0 {
+                    if v.weight == u8::MAX {
+                        v.weight = u.weight + weight;
+                        q.add(v.clone()).expect("Could not add vertex to queue");
+                    } else {
+                        let new_weight: u8 = u.weight + weight;
+                        if new_weight < v.weight {
+                            v.weight = new_weight;
+                        }
+                    }
+                }
+            }
+        }
+        let mut ssp_map: HashMap<String, u8> = HashMap::new();
+        for v in dijkstra_vertices {
+            ssp_map.insert(v.clone().city, v.clone().weight);
+        }
+        return ssp_map;
+    }
 }
 
 pub fn distance_from_bfs_origin(
@@ -150,13 +182,20 @@ pub fn demo() {
     let v: Vertex = Vertex {
         city: "New York".to_string(),
     };
-    let (predecessor, distance) = graph.bfs(v);
+    let (predecessor, distance) = graph.bfs(v.clone());
     let destination: Vertex = Vertex {
         city: "Nashville".to_string(),
     };
     println!(
         "Distance from New York to Nashville (from BFS): {}",
-        distance_from_bfs_origin(destination, predecessor, distance)
+        distance_from_bfs_origin(destination.clone(), predecessor, distance)
+    );
+
+    let ssp_map = graph.dijkstra_ssp(v.clone());
+    
+    println!(
+        "Distance from New York to Nashville (from Dijkstra SSP): {}",
+        ssp_map.get(&destination.clone().city).unwrap()
     );
 }
 
