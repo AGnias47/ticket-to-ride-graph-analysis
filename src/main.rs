@@ -28,7 +28,9 @@ fn most_efficient_routes() {
         ticket::ticket_file_to_vec("mattgawarecki-ticket-to-ride/usa.tickets.json");
     let graph: graph::Graph = graph::Graph::new();
     for t in tickets {
-        let ssp = graph.dijkstra_ssp(graph::Vertex { city: t.clone().source });
+        let ssp = graph.dijkstra_ssp(graph::Vertex {
+            city: t.clone().source,
+        });
         let d: u8 = *ssp.get(&t.clone().destination).unwrap();
         println!("{}", t.to_string());
         println!("Distance: {}", d);
