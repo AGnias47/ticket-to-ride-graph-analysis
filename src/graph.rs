@@ -1,4 +1,4 @@
-use super::matrix::{Matrix};
+use super::matrix::Matrix;
 use super::serializers::L1;
 use std::cmp::{Eq, PartialEq};
 use std::collections::{HashMap, HashSet};

@@ -9,7 +9,7 @@ const CITIES: usize = 36;
 pub struct Matrix {
     pub rows: [[u8; CITIES]; CITIES],
     city_index_map: HashMap<String, usize>,
-    pub size: usize
+    pub size: usize,
 }
 
 impl Matrix {
@@ -23,7 +23,7 @@ impl Matrix {
         return Matrix {
             rows: [[0; CITIES]; CITIES],
             city_index_map: city_index_map,
-            size: CITIES
+            size: CITIES,
         };
     }
 
@@ -45,7 +45,7 @@ impl Matrix {
             *self
                 .city_index_map
                 .get(&destination_city)
-                .unwrap_or(&(0 as usize))
+                .unwrap_or(&(0 as usize)),
         );
     }
 
@@ -113,13 +113,21 @@ pub fn route_file_to_matrix(fpath: &str) -> Matrix {
                 );
                 println!(
                     "{} to {}",
-                    *point_matrix.city_index_map.get(starting_city).unwrap_or(&(0 as usize)),
-                    *point_matrix.city_index_map
+                    *point_matrix
+                        .city_index_map
+                        .get(starting_city)
+                        .unwrap_or(&(0 as usize)),
+                    *point_matrix
+                        .city_index_map
                         .get(destination_city)
                         .unwrap_or(&(0 as usize))
                 );
             }
-            point_matrix.set(starting_city.clone(), destination_city.clone(), route_data.distance);
+            point_matrix.set(
+                starting_city.clone(),
+                destination_city.clone(),
+                route_data.distance,
+            );
             color_matrix.set(starting_city.clone(), destination_city.clone(), 0);
         }
     }

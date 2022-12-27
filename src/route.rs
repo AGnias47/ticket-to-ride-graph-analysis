@@ -3,7 +3,6 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use std::fs;
 
-
 #[derive(Debug, Deserialize)]
 pub struct Route {
     pub source: String,
@@ -14,7 +13,7 @@ pub struct Route {
 
 impl Route {
     fn to_string(&self) -> String {
-            unsafe {
+        unsafe {
             return format!(
                 "Source: {}\nDestination: {}\nDistance: {}\nConnections: {:?}",
                 &self.source, &self.destination, &self.distance, &self.connections
@@ -58,7 +57,6 @@ pub fn route_file_to_hashmap(fpath: &str) -> HashMap<String, HashMap<String, Rou
     }
     return top_level_hashmap;
 }
-
 
 /// Demos route JSON parsing
 pub fn demo() {
