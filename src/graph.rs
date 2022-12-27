@@ -74,10 +74,6 @@ impl Graph {
         return self.vertices.len();
     }
 
-    pub fn get_first_vertex(&self) -> Vertex {
-        return self.vertices.iter().next().unwrap().clone();
-    }
-
     pub fn bfs(
         &self,
         s: Vertex,
@@ -113,6 +109,16 @@ impl Graph {
         }
         return (predecessor, distance);
     }
+}
+
+pub fn dijkstra_ssp(
+    &self,
+    s: Vertex,
+) -> (
+    HashMap<Vertex, Option<Vertex>>,
+    HashMap<Vertex, i8>,
+) {
+    
 }
 
 pub fn distance_from_bfs_origin(
