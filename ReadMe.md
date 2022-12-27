@@ -39,7 +39,18 @@ View how individual modules work. Args can be combined.
 
 ## Future Work
 
-### Most Efficient Routes
+I'm considering this repository done for the most part, as an accurate analysis of the most efficient routes would need to consider various other factors that would require exponentially more work. I've accomplished what I set out to do, which was:
+* Get more experience with Rust
+* Implement graph structures in Rust
+* Apply graph structures to the board game Ticket to Ride
+* Implement BFS, DFS, and Dijkstra's algorithm
+  * DFS not included; partially implented, and then abandoned as it was not helpful to the overall end goal of analyzing most efficient routes
+* Create a simple yet useful efficiency analysis on available Ticket to Ride tickets
+
+
+ Ideas for future expansion are presented below but should not be expected to be implemented.
+
+### Most Efficient Routes Improvements
 
 * Consider length of routes required for a ticket and not just number of trains required to build
 * Consider additional points from building trains in addition to completing the ticket
