@@ -34,7 +34,7 @@ fn most_efficient_routes() {
         let d: u8 = *ssp.get(&t.clone().destination).unwrap();
         println!("{}", t.to_string());
         println!("Distance: {}", d);
-        let dtpr: f32 = d as f32 / t.clone().points as f32;
+        let dtpr: f32 = d as f32 / t.points as f32;
         println!("Distance to Points Ratio: {}", dtpr);
         println!("-----------------");
     }
