@@ -37,6 +37,7 @@ cargo run
 
 View how individual modules work. Args can be combined.
 
+```sh
 ./target/debug/ticket-to-ride --route
 ./target/debug/ticket-to-ride --ticket
 ./target/debug/ticket-to-ride --matrix
